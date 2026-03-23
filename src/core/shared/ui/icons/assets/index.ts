@@ -1,0 +1,15 @@
+export { default as IconSearch } from './search.svg'
+export { default as IconArrow } from './arrow.svg'
+export { default as IconAccountancy } from './accountancy.svg'
+export { default as IconBanking } from './/banking.svg'
+export { default as IconContentWrite } from './content-write.svg'
+export { default as IconLight } from './light.svg'
+export { default as IconLoudspeaker } from './loudspeaker.svg'
+export { default as IconPC } from './PC.svg'
+
+
+
+
+
+
+

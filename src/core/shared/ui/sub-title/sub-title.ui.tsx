@@ -3,11 +3,11 @@ import { cva, type VariantProps } from 'class-variance-authority'
 
 import cn from '@/core/shared/utils/cn'
 
-const titleVariants = cva('', {
+const subTitleVariants = cva('font-regular text-[18px] leading-[30px] text-center', {
   variants: {
     variant: {
-      white: 'text-white font-regular text-[18px] leading-[30px] text-center',
-      black: 'text-dark',
+      white: 'text-white  ',
+      black: 'text-black/50 ',
     },
   },
   defaultVariants: {
@@ -15,7 +15,7 @@ const titleVariants = cva('', {
   },
 })
 
-interface ISubTitleProps extends ComponentProps<any>, VariantProps<typeof titleVariants> {
+interface ISubTitleProps extends ComponentProps<any>, VariantProps<typeof subTitleVariants> {
   className?: string
   as?: ElementType | null
 }
@@ -31,7 +31,7 @@ const SubTitleUi: FC<ISubTitleProps> = ({
 
   return (
     <Tag
-      className={cn(titleVariants({ variant }), 'text-center font-medium !text-white', className)}
+      className={cn(subTitleVariants({ variant }),  className)}
       {...otherProps}
     >
       {children}
