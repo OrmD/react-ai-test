@@ -5,6 +5,7 @@ import { ImageUI } from '@/core/shared/ui/image'
 import { SubTitleUI } from '@/core/shared/ui/sub-title'
 import { TitleUI } from '@/core/shared/ui/title'
 import cn from '@/core/shared/utils/cn'
+import { IconUI } from '@/core/shared/ui/icons'
 
 interface IHeroSectionProps {
   className?: string
@@ -33,12 +34,13 @@ const HeroSection: FC<IHeroSectionProps> = ({ className }) => {
         )}
 
         <div className='mb-4 flex h-[60px] w-full max-w-[1135px] items-center gap-2 rounded-[40px] border border-white bg-[#ffffff10] py-2.5 pl-[36px] backdrop-blur-[12px] md:h-[80px]'>
+          <IconUI variant='search' className='text-white' />
           <input
             id='search'
             className='h-full w-full text-[25px] text-white transition-colors focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50'
           />
 
-          <ClearButtonUi variant='withBg' className='mr-4 text-white'>
+          <ClearButtonUi variant='withBg' className='mr-4 px-[30px] h-[50px] text-white'>
             Search
           </ClearButtonUi>
         </div>
