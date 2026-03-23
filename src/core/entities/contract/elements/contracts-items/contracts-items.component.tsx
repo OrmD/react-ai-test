@@ -5,10 +5,11 @@ import { TabsContentUI } from '@/core/shared/ui/tabs/tabs.ui'
 import CarouselUi from '@/core/shared/ui/carrousel/carousel.ui'
 import { CarouselContentUi, CarouselItemUi } from '@/core/shared/ui/carrousel'
 import ContractsItemComponent from '../contracts-item/contracts-item.component'
+import { Contract } from '@/core/shared/types'
 
 interface Props {
   category: string
-  items: any[] // краще підставити свій тип Contract
+  items: Contract[]
   className?: string
 }
 
