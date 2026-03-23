@@ -25,7 +25,7 @@ const DATA = {
 const ContractsSection: FC<IContractsSectionProps> = ({ className, data }) => {
   return (
     <ContractsStoreProvider initialData={data}>
-      <section className={cn(' ', className)}>
+      <section id='Latest-Contracts-Post' className={cn(' ', className)}>
         {DATA.title && <TitleUI as='h2'> {DATA.title} </TitleUI>}
         {DATA.subTitle && (
           <SubTitleUI as='h3' variant='black' className='mb-9'>

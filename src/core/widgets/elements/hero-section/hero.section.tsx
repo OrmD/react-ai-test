@@ -19,7 +19,7 @@ const data = {
 
 const HeroSection: FC<IHeroSectionProps> = ({ className }) => {
   return (
-    <section className={cn('relative h-[600px] w-full md:h-[800px]', className)}>
+    <section id='Home' className={cn('relative h-[600px] w-full md:h-[800px]', className)}>
       <ImageUI src='/hero-img.png' imageClassName='object-cover' className='z-[1]' fill />
       <div className='relative z-[2] flex h-full flex-col items-center justify-end p-[90px] px-5 text-center md:justify-center'>
         {data.title && (

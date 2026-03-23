@@ -3,9 +3,11 @@
 @layer base {
   html {
     @apply h-full;
+    scroll-behavior: smooth;
   }
   body {
     @apply h-full;
+    scroll-behavior: smooth;
   }
   main {
     @apply h-full;

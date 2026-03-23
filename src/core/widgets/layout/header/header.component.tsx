@@ -6,6 +6,7 @@ import { ClearButtonUi } from '@/core/shared/ui/buttons/clear-button'
 import { LinkUI } from '@/core/shared/ui/link'
 import { LogoUI } from '@/core/shared/ui/logo'
 import cn from '@/core/shared/utils/cn'
+import Link from 'next/link'
 
 interface IHeaderComponent {
   className?: string
@@ -14,15 +15,15 @@ interface IHeaderComponent {
 const navItems = [
   {
     name: 'Home',
-    href: '/',
+    href: 'Home',
   },
   {
     name: 'How It Works',
-    href: '/',
+    href: 'How-It-Works',
   },
   {
     name: 'Latest Contracts Post',
-    href: '/',
+    href: 'Latest-Contracts-Post',
   },
 ]
 
@@ -35,10 +36,10 @@ const HeaderComponent: FC<IHeaderComponent> = ({ className }) => {
         <ul className='flex gap-4'>
           {navItems &&
             navItems.map((item, index) => (
-              <li key={index}>
-                <LinkUI href={item.href} className='hover:text-[#0935FE]'>
+              <li key={index} >
+                <Link href={'#'+item.href} className='hover:text-[#0935FE]'>
                   {item.name}
-                </LinkUI>
+                </Link>
               </li>
             ))}
         </ul>

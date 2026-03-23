@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${MontserratFont.className} relative h-full`}>
+    <html lang='en' className="scroll-smooth">
+      <body className={`${MontserratFont.className}  relative `}>
         <LayoutWidget>{children}</LayoutWidget>
       </body>
     </html>
