@@ -32,7 +32,7 @@ const ContractsItemComponent: FC<IContractsItemComponentProps> = ({ className, d
           >
             <p
               className={cn(
-                'text-[13px] text-[#235DFC]',
+                'text-[13px] text-[#235DFC] text-center',
                 index % 2 === 0 ? 'text-[#235DFC]' : 'text-[#01D04D]',
               )}
             >

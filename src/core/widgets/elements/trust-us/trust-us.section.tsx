@@ -13,7 +13,7 @@ const data = {
 
 const TrustUsSection: FC<IHeroSectionProps> = ({ className }) => {
   return (
-    <section className={cn('h-full w-full', className)}>
+    <section className={cn('', className)}>
       {data.title && (
         <TitleUI as='h2' className='mb-5' variant='black'>
           {data.title}

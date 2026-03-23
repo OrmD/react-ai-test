@@ -21,7 +21,7 @@ export default async function Home() {
   return (
     <>
       <HeroSection className='mb-[20px] md:mb-[50px]'></HeroSection>
-      <TrustUsSection className='mb-[20px] md:mb-[50px]'></TrustUsSection>
+      <TrustUsSection className='mb-[20px]  md:mb-[50px]'></TrustUsSection>
 
       <ContractsSection
         data={{ contracts: data, categories }}

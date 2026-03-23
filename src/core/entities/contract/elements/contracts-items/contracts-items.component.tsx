@@ -1,41 +1,34 @@
 'use client'
 
-import { FC, useRef } from 'react'
-import ContractsItemComponent from '../contracts-item/contracts-item.component'
+import { FC } from 'react'
 import { TabsContentUI } from '@/core/shared/ui/tabs/tabs.ui'
 import CarouselUi from '@/core/shared/ui/carrousel/carousel.ui'
 import { CarouselContentUi, CarouselItemUi } from '@/core/shared/ui/carrousel'
-import { useContractsStore } from '@/core/shared/store/contracts/contracts.provider'
+import ContractsItemComponent from '../contracts-item/contracts-item.component'
 
-interface IContractsItemsComponentProps {
+interface Props {
+  category: string
+  items: any[] // краще підставити свій тип Contract
   className?: string
 }
 
-const ContractsItemsComponent: FC<IContractsItemsComponentProps> = ({ className }) => {
-  const { contracts } = useContractsStore((state) => state)
-
-  const carouselRef = useRef<HTMLDivElement>(null)
-
+const ContractsItemsComponent: FC<Props> = ({ category, items, className }) => {
   return (
-    <CarouselUi
-      opts={{
-        loop: false,
-      }}
-      ref={carouselRef}
-      className={className}
-    >
-      <CarouselContentUi className='-ml-2.5 flex'>
-        {contracts?.map((contract, index) => {
-          return (
-            <CarouselItemUi key={index} className='w-full max-w-[420px] border-none pl-2.5'>
-              <TabsContentUI key={index} value={contract.category}>
-                <ContractsItemComponent data={contract}></ContractsItemComponent>
-              </TabsContentUI>
+    <TabsContentUI value={category}>
+      <CarouselUi opts={{ loop: false }} className={className}>
+        <CarouselContentUi className="-ml-2.5 flex">
+          {items.map((contract) => (
+            <CarouselItemUi
+              key={contract.id}
+              className="w-full max-w-[420px] border-none pl-2.5"
+            >
+              <ContractsItemComponent data={contract} />
             </CarouselItemUi>
-          )
-        })}
-      </CarouselContentUi>
-    </CarouselUi>
+          ))}
+        </CarouselContentUi>
+      </CarouselUi>
+    </TabsContentUI>
   )
 }
+
 export default ContractsItemsComponent
