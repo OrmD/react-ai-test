@@ -39,7 +39,6 @@ const ImageUi: FC<IImageProps> = ({
       ? '/placeholder-img.webp'
       : src
 
-      console.log('imageSrc', imageSrc)
   return (
     <div className={cn('relative', fill && 'absolute inset-0', className)}>
       {withSkeleton && !isLoaded && inView && (

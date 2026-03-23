@@ -1,0 +1,274 @@
+import { NextResponse } from 'next/server'
+
+const contracts =
+[
+  {
+    "id": "1",
+    "company": "Meta",
+    "logo": "meta",
+    "title": "Annual Cybersecurity & Threat Monitoring",
+    "price": 120000,
+    "priceType": "annual",
+    "duration": "12 Months",
+    "renewable": true,
+    "tags": ["Annual Contract", "Verified"],
+    "category": "IT Contractor",
+    "description": "Looking for an IT security partner to manage firewalls, intrusion detection, and ongoing risk assessments for corporate infrastructure."
+  },
+  {
+    "id": "2",
+    "company": "Intel",
+    "logo": "intel",
+    "title": "Multi-Year Custom Software Development",
+    "price": 400000,
+    "priceType": "year",
+    "duration": "3 Years",
+    "renewable": false,
+    "tags": ["Long-Term"],
+    "category": "IT Contractor",
+    "description": "Searching for a reliable development partner for enterprise-grade software solutions including design and maintenance."
+  },
+  {
+    "id": "3",
+    "company": "Plaid",
+    "logo": "plaid",
+    "title": "One-Time Supply of Laptops & Accessories",
+    "price": 42000,
+    "priceType": "one-time",
+    "duration": "2 Months",
+    "renewable": false,
+    "tags": ["Bulk Order", "Verified"],
+    "category": "IT Contractor",
+    "description": "Looking for a supplier to deliver 150 laptops and docking stations for a corporate office setup."
+  },
+  {
+    "id": "4",
+    "company": "Mercury",
+    "logo": "mercury",
+    "title": "Infrastructure Monitoring Services",
+    "price": 9000,
+    "priceType": "monthly",
+    "duration": "12 Months",
+    "renewable": true,
+    "tags": ["Recurring Service"],
+    "category": "IT Contractor",
+    "description": "Seeking a partner to monitor and scale enterprise infrastructure with guaranteed uptime."
+  },
+
+  {
+    "id": "5",
+    "company": "Google",
+    "logo": "google",
+    "title": "Cloud Migration & Optimization",
+    "price": 180000,
+    "priceType": "project",
+    "duration": "6 Months",
+    "renewable": false,
+    "tags": ["Verified"],
+    "category": "IT Contractor",
+    "description": "Full migration of legacy systems to cloud with performance optimization."
+  },
+  {
+    "id": "6",
+    "company": "Amazon",
+    "logo": "amazon",
+    "title": "Warehouse Automation Software",
+    "price": 250000,
+    "priceType": "project",
+    "duration": "8 Months",
+    "renewable": false,
+    "tags": ["Long-Term"],
+    "category": "IT Contractor",
+    "description": "Developing automation tools for warehouse logistics and tracking systems."
+  },
+  {
+    "id": "7",
+    "company": "Netflix",
+    "logo": "netflix",
+    "title": "Streaming Optimization Algorithms",
+    "price": 320000,
+    "priceType": "year",
+    "duration": "2 Years",
+    "renewable": true,
+    "tags": ["Verified"],
+    "category": "Digital & Creative",
+    "description": "Improving streaming performance and personalization algorithms."
+  },
+  {
+    "id": "8",
+    "company": "Spotify",
+    "logo": "spotify",
+    "title": "UI/UX Redesign Project",
+    "price": 75000,
+    "priceType": "project",
+    "duration": "4 Months",
+    "renewable": false,
+    "tags": ["Creative"],
+    "category": "Digital & Creative",
+    "description": "Redesigning user experience across mobile and web platforms."
+  },
+  {
+    "id": "9",
+    "company": "Stripe",
+    "logo": "stripe",
+    "title": "Payment Gateway Integration",
+    "price": 55000,
+    "priceType": "project",
+    "duration": "3 Months",
+    "renewable": false,
+    "tags": ["Verified"],
+    "category": "Banking",
+    "description": "Integrating secure and scalable payment solutions for e-commerce."
+  },
+  {
+    "id": "10",
+    "company": "PayPal",
+    "logo": "paypal",
+    "title": "Fraud Detection System Upgrade",
+    "price": 140000,
+    "priceType": "project",
+    "duration": "5 Months",
+    "renewable": true,
+    "tags": ["Security"],
+    "category": "Banking",
+    "description": "Enhancing fraud detection algorithms and monitoring tools."
+  },
+
+  {
+    "id": "11",
+    "company": "HubSpot",
+    "logo": "hubspot",
+    "title": "Content Marketing Strategy",
+    "price": 30000,
+    "priceType": "project",
+    "duration": "3 Months",
+    "renewable": false,
+    "tags": ["Marketing"],
+    "category": "Marketing & PR",
+    "description": "Developing a content marketing strategy for SaaS growth."
+  },
+  {
+    "id": "12",
+    "company": "Adobe",
+    "logo": "adobe",
+    "title": "Brand Identity Refresh",
+    "price": 60000,
+    "priceType": "project",
+    "duration": "4 Months",
+    "renewable": false,
+    "tags": ["Creative"],
+    "category": "Digital & Creative",
+    "description": "Refreshing brand identity including logo, colors, and guidelines."
+  },
+  {
+    "id": "13",
+    "company": "Tesla",
+    "logo": "tesla",
+    "title": "Embedded Software Development",
+    "price": 270000,
+    "priceType": "year",
+    "duration": "2 Years",
+    "renewable": true,
+    "tags": ["Long-Term"],
+    "category": "IT Contractor",
+    "description": "Developing embedded systems for automotive applications."
+  },
+  {
+    "id": "14",
+    "company": "Uber",
+    "logo": "uber",
+    "title": "Driver App Optimization",
+    "price": 90000,
+    "priceType": "project",
+    "duration": "4 Months",
+    "renewable": false,
+    "tags": ["Mobile"],
+    "category": "Digital & Creative",
+    "description": "Improving performance and UX of the driver mobile application."
+  },
+  {
+    "id": "15",
+    "company": "Airbnb",
+    "logo": "airbnb",
+    "title": "Search Ranking Improvements",
+    "price": 130000,
+    "priceType": "project",
+    "duration": "6 Months",
+    "renewable": false,
+    "tags": ["AI"],
+    "category": "IT Contractor",
+    "description": "Enhancing search algorithms for better listing relevance."
+  },
+
+  {
+    "id": "16",
+    "company": "Dropbox",
+    "logo": "dropbox",
+    "title": "Cloud Storage Optimization",
+    "price": 110000,
+    "priceType": "project",
+    "duration": "5 Months",
+    "renewable": false,
+    "tags": ["Cloud"],
+    "category": "IT Contractor",
+    "description": "Optimizing storage and file sync performance."
+  },
+  {
+    "id": "17",
+    "company": "Slack",
+    "logo": "slack",
+    "title": "Real-Time Messaging Improvements",
+    "price": 95000,
+    "priceType": "project",
+    "duration": "4 Months",
+    "renewable": false,
+    "tags": ["Realtime"],
+    "category": "IT Contractor",
+    "description": "Improving real-time messaging reliability and latency."
+  },
+  {
+    "id": "18",
+    "company": "Zoom",
+    "logo": "zoom",
+    "title": "Video Compression Enhancement",
+    "price": 150000,
+    "priceType": "project",
+    "duration": "6 Months",
+    "renewable": false,
+    "tags": ["Video"],
+    "category": "IT Contractor",
+    "description": "Enhancing video compression for better performance."
+  },
+  {
+    "id": "19",
+    "company": "Shopify",
+    "logo": "shopify",
+    "title": "E-commerce Platform Scaling",
+    "price": 200000,
+    "priceType": "year",
+    "duration": "1 Year",
+    "renewable": true,
+    "tags": ["Scaling"],
+    "category": "IT Contractor",
+    "description": "Scaling infrastructure to handle high traffic loads."
+  },
+  {
+    "id": "20",
+    "company": "Notion",
+    "logo": "notion",
+    "title": "Collaboration Features Expansion",
+    "price": 85000,
+    "priceType": "project",
+    "duration": "4 Months",
+    "renewable": false,
+    "tags": ["Product"],
+    "category": "Digital & Creative",
+    "description": "Adding new collaboration features to the platform."
+  }
+]
+
+export async function GET() {
+  return NextResponse.json({
+    data: contracts,
+  })
+}
