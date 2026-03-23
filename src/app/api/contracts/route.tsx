@@ -224,7 +224,7 @@ const contracts: Contract[] =
     "duration": "4 Months",
     "renewable": false,
     "tags": ["Realtime"],
-    "category": "IT Contractor",
+    "category": "Accountancy",
     "description": "Improving real-time messaging reliability and latency."
   },
   {
@@ -237,7 +237,7 @@ const contracts: Contract[] =
     "duration": "6 Months",
     "renewable": false,
     "tags": ["Video"],
-    "category": "IT Contractor",
+    "category": "Accountancy",
     "description": "Enhancing video compression for better performance."
   },
   {
@@ -250,7 +250,7 @@ const contracts: Contract[] =
     "duration": "1 Year",
     "renewable": true,
     "tags": ["Scaling"],
-    "category": "IT Contractor",
+    "category": "Content Writer",
     "description": "Scaling infrastructure to handle high traffic loads."
   },
   {
@@ -263,7 +263,7 @@ const contracts: Contract[] =
     "duration": "4 Months",
     "renewable": false,
     "tags": ["Product"],
-    "category": "Digital & Creative",
+    "category": "Content Writer",
     "description": "Adding new collaboration features to the platform."
   }
 ]

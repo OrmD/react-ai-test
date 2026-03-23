@@ -46,7 +46,7 @@ const TabsContentUI = forwardRef<
 >(({ className, ...props }, ref) => (
   <Tabs.Content
     ref={ref}
-    className={cn('mt-2 rounded-md bg-white p-4 shadow', className)}
+    className={cn(' rounded-md bg-white ', className)}
     {...props}
   />
 ))
