@@ -30,10 +30,7 @@ const SubTitleUi: FC<ISubTitleProps> = ({
   const Tag = Component || 'h2'
 
   return (
-    <Tag
-      className={cn(subTitleVariants({ variant }),  className)}
-      {...otherProps}
-    >
+    <Tag className={cn(subTitleVariants({ variant }), className)} {...otherProps}>
       {children}
     </Tag>
   )

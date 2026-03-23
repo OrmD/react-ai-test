@@ -3,7 +3,11 @@
 import { createContext, ReactNode, useContext, useMemo, useRef } from 'react'
 import { useStore } from 'zustand/react'
 
-import { createContractsStore, IContractsStoreState, TContractsStore } from '@/core/shared/store/contracts/contracts.store'
+import {
+  createContractsStore,
+  IContractsStoreState,
+  TContractsStore,
+} from '@/core/shared/store/contracts/contracts.store'
 
 type TContractsStoreContext = ReturnType<typeof createContractsStore> | undefined
 
@@ -15,13 +19,9 @@ interface IContractsStoreProviderProps {
 }
 
 export const ContractsStoreProvider = ({ initialData, children }: IContractsStoreProviderProps) => {
-   const store = useMemo(() => createContractsStore(initialData), [initialData])
+  const store = useMemo(() => createContractsStore(initialData), [initialData])
 
-  return (
-    <ContractsStoreContext.Provider value={store}>
-      {children}
-    </ContractsStoreContext.Provider>
-  )
+  return <ContractsStoreContext.Provider value={store}>{children}</ContractsStoreContext.Provider>
 }
 
 export const useContractsStore = <T,>(selector: (store: TContractsStore) => T): T => {

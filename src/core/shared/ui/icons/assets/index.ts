@@ -7,10 +7,3 @@ export { default as IconLight } from './light.svg'
 export { default as IconLoudspeaker } from './loudspeaker.svg'
 export { default as IconPC } from './PC.svg'
 export { default as IconTime } from './time.svg'
-
-
-
-
-
-
-

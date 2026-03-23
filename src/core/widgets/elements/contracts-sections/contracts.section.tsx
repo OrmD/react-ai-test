@@ -12,7 +12,7 @@ import { ContractsStoreProvider } from '@/core/shared/store/contracts/contracts.
 interface IContractsSectionProps {
   className?: string
   data: {
-    contracts: Contract[],
+    contracts: Contract[]
     categories: Category[]
   }
 }
@@ -20,18 +20,22 @@ interface IContractsSectionProps {
 const DATA = {
   title: 'Latest Contracts Post',
   subTitle: 'Search and connect with the right companies faster',
- 
 }
 
 const ContractsSection: FC<IContractsSectionProps> = ({ className, data }) => {
   return (
-<ContractsStoreProvider initialData={data}>
-    <section className={cn(' ', className)}>
-     {DATA.title && <TitleUI as='h2'> {DATA.title} </TitleUI>}
-     {DATA.subTitle && <SubTitleUI as='h3' variant="black" className='mb-9'> {DATA.subTitle} </SubTitleUI>}
-      
-     <ContractsComponent></ContractsComponent>
-    </section>
+    <ContractsStoreProvider initialData={data}>
+      <section className={cn(' ', className)}>
+        {DATA.title && <TitleUI as='h2'> {DATA.title} </TitleUI>}
+        {DATA.subTitle && (
+          <SubTitleUI as='h3' variant='black' className='mb-9'>
+            {' '}
+            {DATA.subTitle}{' '}
+          </SubTitleUI>
+        )}
+
+        <ContractsComponent></ContractsComponent>
+      </section>
     </ContractsStoreProvider>
   )
 }

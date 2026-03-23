@@ -5,7 +5,7 @@ import { TrustUsSection } from '@/core/widgets/elements/trust-us'
 
 async function getContracts() {
   const res = await fetch('http://localhost:3000/api/contracts', {
-    cache: 'no-store', 
+    cache: 'no-store',
   })
 
   if (!res.ok) {
@@ -15,17 +15,18 @@ async function getContracts() {
   return res.json()
 }
 
-
 export default async function Home() {
-  
-  const { data, categories } = await getContracts();
+  const { data, categories } = await getContracts()
 
   return (
     <>
       <HeroSection className='mb-[20px] md:mb-[50px]'></HeroSection>
       <TrustUsSection className='mb-[20px] md:mb-[50px]'></TrustUsSection>
-      
-        <ContractsSection data={{ contracts: data, categories }} className='mb-[20px] md:mb-[50px]'></ContractsSection>
+
+      <ContractsSection
+        data={{ contracts: data, categories }}
+        className='mb-[20px] md:mb-[50px]'
+      ></ContractsSection>
     </>
   )
 }

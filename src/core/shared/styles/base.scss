@@ -1,16 +1,13 @@
-@use "tailwindcss";
+@use 'tailwindcss';
 
 @layer base {
- 
   html {
-    @apply h-full ;
+    @apply h-full;
   }
   body {
-    @apply h-full  ;
+    @apply h-full;
   }
   main {
     @apply h-full;
   }
-
- 
 }

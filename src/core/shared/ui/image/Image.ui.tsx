@@ -33,11 +33,7 @@ const ImageUi: FC<IImageProps> = ({
   const [isLoaded, setIsLoaded] = useState(false)
   const [error, setError] = useState(false)
 
-  const imageSrc = !inView
-    ? '/placeholder-img.webp'
-    : !src || error
-      ? '/placeholder-img.webp'
-      : src
+  const imageSrc = !inView ? '/placeholder-img.webp' : !src || error ? '/placeholder-img.webp' : src
 
   return (
     <div className={cn('relative', fill && 'absolute inset-0', className)}>

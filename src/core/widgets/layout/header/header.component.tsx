@@ -29,7 +29,7 @@ const navItems = [
 const HeaderComponent: FC<IHeaderComponent> = ({ className }) => {
   return (
     <header className={cn('absolute top-5 z-[100] w-full px-2.5', className)}>
-      <nav className='mx-auto  flex w-full max-w-[1360px] md:flex-row flex-wrap items-center md:justify-between gap-1 rounded-[60px] bg-[#ffffff50] px-3 px-5 py-3 backdrop-blur-[42px] flex-col justify-center  '>
+      <nav className='mx-auto flex w-full max-w-[1360px] flex-col flex-wrap items-center justify-center gap-1 rounded-[60px] bg-[#ffffff50] px-3 px-5 py-3 backdrop-blur-[42px] md:flex-row md:justify-between'>
         <LogoUI />
 
         <ul className='flex gap-4'>
@@ -47,7 +47,7 @@ const HeaderComponent: FC<IHeaderComponent> = ({ className }) => {
           <ClearButtonUi variant='withBg'>
             <LinkUI href='/'>Login</LinkUI>
           </ClearButtonUi>
-          <ClearButtonUi variant="withBorder">
+          <ClearButtonUi variant='withBorder'>
             <LinkUI href='/'>Register</LinkUI>
           </ClearButtonUi>
         </div>

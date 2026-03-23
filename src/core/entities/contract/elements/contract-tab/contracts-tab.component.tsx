@@ -6,24 +6,26 @@ import { FC } from 'react'
 interface IContractsTabComponentProps {
   className?: string
   children?: string
- 
+
   value: string
   icon?: string
 }
 
+const ContractsTabComponent: FC<IContractsTabComponentProps> = ({
+  className,
+  value,
+  icon,
+  children,
+}) => {
+  console.log('tab value', value)
 
-
-const ContractsTabComponent: FC<IContractsTabComponentProps> = ({ className, value, icon,  children }) => {
-  console.log('tab value', value);
-  
   return (
-    <TabsTriggerUI  value={value} className={cn('flex gap-3.5 items-center',className)} >
-      <div className='bg-[#0026FF] rounded-full w-10 h-10 flex items-center justify-center'>
-
-     {icon && <IconUI variant={icon} className='text-white' />}
+    <TabsTriggerUI value={value} className={cn('flex items-center gap-3.5', className)}>
+      <div className='flex h-10 w-10 items-center justify-center rounded-full bg-[#0026FF]'>
+        {icon && <IconUI variant={icon} className='text-white' />}
       </div>
-     {children}
-     </TabsTriggerUI>
+      {children}
+    </TabsTriggerUI>
   )
 }
 export default ContractsTabComponent

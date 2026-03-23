@@ -9,7 +9,7 @@ import {
   IconLight,
   IconLoudspeaker,
   IconPC,
-  IconTime
+  IconTime,
 } from '../assets'
 
 export enum EVariant {
@@ -50,51 +50,55 @@ const map = new Map<TVariant, { className: string; icon: FC<SVGProps<SVGElement>
       icon: IconArrow,
     },
   ],
-   [
+  [
     EVariant.ACCOUNTANCY,
     {
       className: 'h-6 w-5 text-black ',
       icon: IconAccountancy,
     },
-  ], [
+  ],
+  [
     EVariant.BANKING,
     {
       className: 'h-6 w-5 text-black ',
       icon: IconBanking,
     },
-  ], [
+  ],
+  [
     EVariant.CONTENT_WRITE,
     {
       className: 'h-6 w-5 text-black ',
       icon: IconContentWrite,
     },
-  ], [
+  ],
+  [
     EVariant.LIGHT,
     {
       className: 'h-6 w-5 text-black ',
       icon: IconLight,
     },
-  ], [
+  ],
+  [
     EVariant.LOUDSPEAKER,
     {
       className: 'h-6 w-5 text-black ',
       icon: IconLoudspeaker,
     },
-  ], [
+  ],
+  [
     EVariant.PC,
     {
       className: 'h-6 w-5 text-black ',
       icon: IconPC,
     },
-  ], [
+  ],
+  [
     EVariant.TIME,
     {
       className: 'h-6 w-5 text-black ',
       icon: IconTime,
     },
-    
-  ]
-  
+  ],
 ])
 
 export const useVariant = ({ variant }: IUseVariantProps): IUseVariantReturn | null => {

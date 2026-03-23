@@ -9,40 +9,31 @@ import { useContractsStore } from '@/core/shared/store/contracts/contracts.provi
 
 interface IContractsItemsComponentProps {
   className?: string
-  
 }
 
-
-
 const ContractsItemsComponent: FC<IContractsItemsComponentProps> = ({ className }) => {
-
-  const {contracts} = useContractsStore((state) => state)
+  const { contracts } = useContractsStore((state) => state)
 
   const carouselRef = useRef<HTMLDivElement>(null)
-  
+
   return (
-    <CarouselUi 
-    opts={
-      {
-        loop:false
-      }
-    }
-    ref={carouselRef}
-          className={className}>
-
-      <CarouselContentUi className='flex -ml-2.5'>
-
-        {contracts?.map((contract,index) => {
-
-          return ( 
-            <CarouselItemUi key={index} className='pl-2.5 border-none max-w-[420px] w-full'>
-
-       <TabsContentUI key={index} value={contract.category}>
-         
-          <ContractsItemComponent data={contract} ></ContractsItemComponent>
-      </TabsContentUI>
+    <CarouselUi
+      opts={{
+        loop: false,
+      }}
+      ref={carouselRef}
+      className={className}
+    >
+      <CarouselContentUi className='-ml-2.5 flex'>
+        {contracts?.map((contract, index) => {
+          return (
+            <CarouselItemUi key={index} className='w-full max-w-[420px] border-none pl-2.5'>
+              <TabsContentUI key={index} value={contract.category}>
+                <ContractsItemComponent data={contract}></ContractsItemComponent>
+              </TabsContentUI>
             </CarouselItemUi>
-        )})}
+          )
+        })}
       </CarouselContentUi>
     </CarouselUi>
   )

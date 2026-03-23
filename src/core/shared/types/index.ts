@@ -13,7 +13,7 @@ export type Contract = {
   category: string
   description: string
 }
-export type  Category = {
+export type Category = {
   id: number
   name: string
   icon: TVariant
