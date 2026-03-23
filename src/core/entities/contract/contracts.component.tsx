@@ -11,9 +11,11 @@ interface IContractsComponentProps {
 
 
 const ContractsComponent: FC<IContractsComponentProps> = ({ className }) => {
+ 
+ 
   return (
    <div>
-    <TabsUI>
+    <TabsUI defaultValue='IT Contractor'>
 
     <ContractsTabsComponent></ContractsTabsComponent>
     <ContractsItemsComponent></ContractsItemsComponent>

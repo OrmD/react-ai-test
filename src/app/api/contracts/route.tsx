@@ -1,6 +1,7 @@
+import { Category, Contract, ResponseDataContracts } from '@/core/shared/types'
 import { NextResponse } from 'next/server'
 
-const contracts =
+const contracts: Contract[] =
 [
   {
     "id": "1",
@@ -266,9 +267,18 @@ const contracts =
     "description": "Adding new collaboration features to the platform."
   }
 ]
+const categories: Category[] = [
+  { id: 1, name: "IT Contractor", icon: 'PC' },
+  { id: 2, name: "Content Writer", icon: 'content-write'  },
+  { id: 3, name: "Accountancy", icon: 'accountancy' },
+  { id: 4, name: "Digital & Creative", icon: 'light' },
+  { id: 5, name: "Banking", icon: 'banking' },
+  { id: 6, name: "Marketing & PR", icon: 'loudspeaker' },
+]
 
 export async function GET() {
   return NextResponse.json({
     data: contracts,
+    categories
   })
 }

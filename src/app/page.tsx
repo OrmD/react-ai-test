@@ -1,3 +1,4 @@
+import { ContractsStoreProvider } from '@/core/shared/store/contracts/contracts.provider'
 import { ContractsSection } from '@/core/widgets/elements/contracts-sections'
 import { HeroSection } from '@/core/widgets/elements/hero-section'
 import { TrustUsSection } from '@/core/widgets/elements/trust-us'
@@ -17,14 +18,14 @@ async function getContracts() {
 
 export default async function Home() {
   
-  const { data } = await getContracts();
-
+  const { data, categories } = await getContracts();
 
   return (
     <>
       <HeroSection className='mb-[20px] md:mb-[50px]'></HeroSection>
       <TrustUsSection className='mb-[20px] md:mb-[50px]'></TrustUsSection>
-      <ContractsSection className='mb-[20px] md:mb-[50px]'></ContractsSection>
+      
+        <ContractsSection data={{ contracts: data, categories }} className='mb-[20px] md:mb-[50px]'></ContractsSection>
     </>
   )
 }

@@ -15,7 +15,7 @@ const TabsListUI = forwardRef<
   <Tabs.List
     ref={ref}
     className={cn(
-      'inline-flex items-center justify-start rounded-md bg-gray-100 p-1',
+      'flex items-center gap-4 justify-between rounded-md  p-1',
       className
     )}
     {...props}
@@ -31,7 +31,7 @@ const TabsTriggerUI = forwardRef<
   <Tabs.Trigger
     ref={ref}
     className={cn(
-      'px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-200 data-[state=active]:bg-white data-[state=active]:shadow',
+      'px-3 py-2 max-w-[250px] w-full text-sm font-regular text-[#27272A] bg-[#F6F6F6] t text-gray-700 rounded-[70px] hover:bg-[#1A51FC50] data-[state=active]:bg-[#1A51FC]  data-[state=active]:text-white data-[state=active]:shadow',
       className
     )}
     {...props}

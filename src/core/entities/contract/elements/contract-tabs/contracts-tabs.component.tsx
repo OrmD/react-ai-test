@@ -1,5 +1,7 @@
-import { TabsListUI, TabsTriggerUI } from '@/core/shared/ui/tabs/tabs.ui'
+import { useContractsStore } from '@/core/shared/store/contracts/contracts.provider'
+import { TabsListUI,  } from '@/core/shared/ui/tabs/tabs.ui'
 import { FC } from 'react'
+import ContractsTabComponent from '../contract-tab/contracts-tab.component'
 
 interface IContractsTabsComponentProps {
   className?: string
@@ -8,11 +10,17 @@ interface IContractsTabsComponentProps {
 
 
 const ContractsTabsComponent: FC<IContractsTabsComponentProps> = ({ className }) => {
+  const {categories} = useContractsStore((state) => state)
+  
+
+
   return (
-    <TabsListUI>
-       <TabsTriggerUI value="tab1" defaultChecked>Tab 1</TabsTriggerUI>
-        <TabsTriggerUI value="tab2">Tab 2</TabsTriggerUI>
-          <TabsTriggerUI value="tab3">Tab 3</TabsTriggerUI>
+    <TabsListUI  className={className}>
+       {categories?.map((category,index) => (
+        <ContractsTabComponent key={index}  value={category.name} icon={category.icon}>
+          {category.name}
+        </ContractsTabComponent>
+      ))}
     </TabsListUI>
   )
 }
