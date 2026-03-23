@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import ContractsItemComponent from '../contracts-item/contracts-item.component'
 
 interface IContractsItemsComponentProps {
   className?: string
@@ -9,7 +10,8 @@ interface IContractsItemsComponentProps {
 const ContractsItemsComponent: FC<IContractsItemsComponentProps> = ({ className }) => {
   return (
     <div>
-      Items
+      <ContractsItemComponent></ContractsItemComponent>
+      
     </div>
   )
 }

@@ -17,7 +17,7 @@ const ContractsComponent: FC<IContractsComponentProps> = ({ className }) => {
    <div>
     <TabsUI defaultValue='IT Contractor'>
 
-    <ContractsTabsComponent></ContractsTabsComponent>
+    <ContractsTabsComponent className='mb-[30px]'></ContractsTabsComponent>
     <ContractsItemsComponent></ContractsItemsComponent>
     </TabsUI>
    </div>

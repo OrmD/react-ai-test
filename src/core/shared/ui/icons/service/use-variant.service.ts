@@ -9,6 +9,7 @@ import {
   IconLight,
   IconLoudspeaker,
   IconPC,
+  IconTime
 } from '../assets'
 
 export enum EVariant {
@@ -20,6 +21,7 @@ export enum EVariant {
   LIGHT = 'light',
   LOUDSPEAKER = 'loudspeaker',
   PC = 'PC',
+  TIME = 'time',
 }
 
 export type TVariant = (typeof EVariant)[keyof typeof EVariant] | string
@@ -84,6 +86,13 @@ const map = new Map<TVariant, { className: string; icon: FC<SVGProps<SVGElement>
       className: 'h-6 w-5 text-black ',
       icon: IconPC,
     },
+  ], [
+    EVariant.TIME,
+    {
+      className: 'h-6 w-5 text-black ',
+      icon: IconTime,
+    },
+    
   ]
   
 ])
