@@ -11,7 +11,6 @@ const ContractsItemsComponent: FC<IContractsItemsComponentProps> = ({ className 
   return (
     <div>
       <ContractsItemComponent></ContractsItemComponent>
-      
     </div>
   )
 }
